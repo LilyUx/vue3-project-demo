@@ -6,8 +6,9 @@
         :key="nav.path"
         :to="nav.path"
         class="nav-link"
-        >{{ nav.meta.title }}</router-link
       >
+        {{ nav.meta.title }}
+      </router-link>
     </div>
     <div class="content">
       <router-view />
@@ -16,10 +17,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
-
 import { Navs } from "../../router/index";
-const count = ref(0);
 </script>
 
 <style lang="less" scoped>

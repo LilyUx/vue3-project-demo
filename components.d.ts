@@ -5,31 +5,31 @@
 // Read more: https://github.com/vuejs/core/pull/3399
 import '@vue/runtime-core'
 
-export {}
+export {};
 
-declare module '@vue/runtime-core' {
+declare module "@vue/runtime-core" {
   export interface GlobalComponents {
-    BasicUsage: typeof import('./src/components/detailpanel/demo/basic-usage.vue')['default']
-    CanvasApp: typeof import('./src/components/CanvasApp.vue')['default']
-    Composition: typeof import('./src/components/Composition.vue')['default']
-    copy: typeof import('./src/components/detailpanel/src/DetailPanel copy.vue')['default']
-    DescriptionItem: typeof import('./src/components/descriptions/src/DescriptionItem.vue')['default']
-    Descriptions: typeof import('./src/components/descriptions/src/Descriptions.vue')['default']
-    Detailpanel: typeof import('./src/components/detailpanel/src/detailpanel.vue')['default']
-    DetailPanel: typeof import('./src/components/detailpanel/src/DetailPanel.vue')['default']
-    DetailPanel1: typeof import('./src/components/detailpanel/src/DetailPanel1.vue')['default']
-    DetailPanel2: typeof import('./src/components/detailpanel/src/DetailPanel2.vue')['default']
-    DetailpanelC: typeof import('./src/components/detailpanel/src/detailpanelC.vue')['default']
-    ElButton: typeof import('element-plus/es')['ElButton']
-    ElIcon: typeof import('element-plus/es')['ElIcon']
-    ElLink: typeof import('element-plus/es')['ElLink']
-    ElProgress: typeof import('element-plus/es')['ElProgress']
-    ElRow: typeof import('element-plus/es')['ElRow']
-    ElTag: typeof import('element-plus/es')['ElTag']
-    ElTooltip: typeof import('element-plus/es')['ElTooltip']
-    HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
-    ModalButton: typeof import('./src/components/ModalButton.vue')['default']
-    RouterLink: typeof import('vue-router')['RouterLink']
-    RouterView: typeof import('vue-router')['RouterView']
+    BasicUsage: typeof import("./src/components/detailpanel/demo/basic-usage.vue")["default"];
+    CanvasApp: typeof import("./src/components/CanvasApp.vue")["default"];
+    Composition: typeof import("./src/components/Composition.vue")["default"];
+    copy: typeof import("./src/components/detailpanel/src/DetailPanel copy.vue")["default"];
+    DescriptionItem: typeof import("./src/components/descriptions/src/DescriptionItem.vue")["default"];
+    Descriptions: typeof import("./src/components/descriptions/src/Descriptions.vue")["default"];
+    Detailpanel: typeof import("./src/components/detailpanel/src/detailpanel.vue")["default"];
+    DetailPanel: typeof import("./src/components/detailpanel/src/DetailPanel.vue")["default"];
+    DetailPanel1: typeof import("./src/components/detailpanel/src/DetailPanel1.vue")["default"];
+    DetailPanel2: typeof import("./src/components/detailpanel/src/DetailPanel2.vue")["default"];
+    DetailpanelC: typeof import("./src/components/detailpanel/src/detailpanelC.vue")["default"];
+    ElButton: typeof import("element-plus/es")["ElButton"];
+    ElIcon: typeof import("element-plus/es")["ElIcon"];
+    ElLink: typeof import("element-plus/es")["ElLink"];
+    ElProgress: typeof import("element-plus/es")["ElProgress"];
+    ElRow: typeof import("element-plus/es")["ElRow"];
+    ElTag: typeof import("element-plus/es")["ElTag"];
+    ElTooltip: typeof import("element-plus/es")["ElTooltip"];
+    HelloWorld: typeof import("./src/components/HelloWorld.vue")["default"];
+    ModalButton: typeof import("./src/components/ModalButton.vue")["default"];
+    RouterLink: typeof import("vue-router")["RouterLink"];
+    RouterView: typeof import("vue-router")["RouterView"];
   }
 }

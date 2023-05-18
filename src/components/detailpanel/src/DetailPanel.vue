@@ -1,4 +1,6 @@
 <script lang="tsx">
+/* eslint-disable */
+import { Hide, View } from "@element-plus/icons-vue";
 import {
   computed,
   CSSProperties,
@@ -9,7 +11,6 @@ import {
   resolveComponent,
   useSlots,
   ref,
-  compile,
 } from "vue";
 import { Direction, DetailPanel } from "./types";
 
@@ -63,12 +64,11 @@ export default defineComponent({
       if (labelSlotName) {
         const shouldRenderLabelSlot = !!useSlots()[labelSlotName];
         return shouldRenderLabelSlot ? (
-          <div class="detail-label">{slots[labelSlotName]({ ...detail })}</div>
+          <div class="detail-label">{slots[labelSlotName]!({ ...detail })}</div>
         ) : null;
       } else if (renderLabel) {
         return h(renderLabel, detail);
       } else if (detail.labelIcon) {
-        console.log(labelIcon);
         return (
           <>
             <el-icon class="detail-panel-icon">
@@ -111,7 +111,7 @@ export default defineComponent({
         const shouldRenderContentSlot = !!useSlots()[contentSlotName];
         return shouldRenderContentSlot ? (
           <div class="detail-content">
-            {slots[contentSlotName]({ ...detail })}
+            {slots[contentSlotName]!({ ...detail })}
           </div>
         ) : null;
       } else if (renderContent) {
@@ -175,7 +175,7 @@ export default defineComponent({
         {props.title ? (
           <div class="detail-panel-title">{props.title}</div>
         ) : slotTitle ? (
-          slots["title"]()
+          slots["title"]!()
         ) : null}
         <div class="detail-panel-content">
           {props.data.map((detail: any, index: any) => {

@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { h } from "vue";
 import InDetailPanel from "../index";
 import { DetailPanel } from "../src/types";
 
@@ -41,10 +40,9 @@ const detailData: DetailPanel[] = [
 
 <template>
   <div class="box">
-    <in-detail-panel :data="detailData" title="详情展示"> </in-detail-panel>
+    <in-detail-panel :data="detailData" title="详情展示" />
 
-    <in-detail-panel :data="detailData" title="详情展示" direction="vertical">
-    </in-detail-panel>
+    <in-detail-panel :data="detailData" title="详情展示" direction="vertical" />
 
     <!-- <DetailPanel1 :data="detailData" direction="vertical" title="详情展示">
       <template v-slot:mytest=""></template>

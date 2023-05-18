@@ -2,5 +2,4 @@
 
 ### Reference Documentation
 
-#IMT前端项目
-#前端文件整体放入backend/static路径下
+#IMT 前端项目 #前端文件整体放入 backend/static 路径下

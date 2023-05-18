@@ -6,7 +6,7 @@ export default {
     render: Function,
     item: Object as PropType<DetailPanel>,
   },
-  render: (props: any, context: any) => {
+  render: (props: any) => {
     return h(props.render, props.item);
   },
 };

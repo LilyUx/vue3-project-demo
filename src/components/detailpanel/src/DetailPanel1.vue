@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, CSSProperties, PropType, unref, ref } from "vue";
+import { computed, CSSProperties, PropType, ref } from "vue";
 import { Direction, DetailPanel } from "./types";
 import RenderComp from "./RenderComp";
 
@@ -51,26 +51,28 @@ const handleShowPwd = () => {
 
 <template>
   <div class="detail-panel">
-    <div class="detail-panel-title">{{ title }}</div>
+    <div class="detail-panel-title">
+      {{ title }}
+    </div>
     <div class="detail-panel-content">
       <div
+        v-for="(detail, index) in data"
+        :key="index"
         :class="[
           'detail-panel-item',
           props.direction === 'horizontal' ? 'horizontal' : 'vertical',
         ]"
-        v-for="(detail, index) in data"
-        :key="index"
         :style="detailPanelItemStyle"
       >
         <div class="label" :style="labelWidthStyle">
-          <slot :name="detail.labelSlotName" v-if="detail.labelSlotName"></slot>
+          <slot v-if="detail.labelSlotName" :name="detail.labelSlotName" />
           <render-comp
+            v-else-if="detail.renderLabel"
             :render="detail.renderLabel"
             :item="detail"
-            v-else-if="detail.renderLabel"
-          ></render-comp>
+          />
           <template v-else>
-            <el-icon class="detail-panel-icon" v-if="detail.labelIcon">
+            <el-icon v-if="detail.labelIcon" class="detail-panel-icon">
               <component :is="detail.labelIcon" />
             </el-icon>
             {{ detail.label }}
@@ -80,20 +82,19 @@ const handleShowPwd = () => {
           class="content"
           :style="{ marginLeft: detail.labelIcon ? '38px' : '12px' }"
         >
-          <slot
-            v-if="detail.contentSlotName"
-            :name="detail.contentSlotName"
-          ></slot>
+          <slot v-if="detail.contentSlotName" :name="detail.contentSlotName" />
           <render-comp
+            v-else-if="detail.renderContent"
             :render="detail.renderContent"
             :item="detail"
-            v-else-if="detail.renderContent"
-          ></render-comp>
+          />
           <template
             v-else-if="detail.type === 'password' || detail.type === 'pwd'"
           >
-            <template v-if="showPwd">{{ detail.content }}</template>
-            <template v-else>********</template>
+            <template v-if="showPwd">
+              {{ detail.content }}
+            </template>
+            <template v-else> ******** </template>
             <el-icon class="detail-panel-pwd-icon" @click="handleShowPwd">
               <View v-if="showPwd" />
               <Hide v-else />
@@ -117,8 +118,7 @@ const handleShowPwd = () => {
                 :style="{
                   backgroundColor: detail.statusColor ? detail.statusColor : '',
                 }"
-              >
-              </i>
+              />
               {{ detail.content || "-" }}
             </span>
           </template>
@@ -132,13 +132,13 @@ const handleShowPwd = () => {
               :percentage="
                 typeof detail.content === 'number'
                   ? detail.content
-                  : parseFloat(detail.content)
+                  : parseFloat(detail.content || '0')
               "
             />
           </template>
           <template v-else>
             <el-tooltip
-              :content="detail.content"
+              :content="detail.content?.toString() || ''"
               placement="bottom"
               effect="dark"
             >
@@ -168,30 +168,40 @@ const handleShowPwd = () => {
     flex-direction: row;
     flex-wrap: wrap;
     .detail-panel-item {
-      line-height: 16px;
+      line-height: 24px;
       display: flex;
-      padding: 10px 0;
+      padding: 6px 0;
       font-size: 14px;
       &.vertical {
         flex-direction: column;
         .content {
           flex: 1;
           padding: 10px 0 0 0;
+
+          .detail-panel-pwd {
+            justify-content: space-between;
+            .detail-panel-pwd-icon {
+              margin-right: 12px;
+            }
+          }
         }
       }
 
       .label {
-        padding: 0 12px;
+        // padding: 0 12px;
         display: block;
         .detail-panel-icon {
           font-size: 16px;
           margin-right: 6px;
-          vertical-align: top;
+          vertical-align: middle;
         }
       }
       .content {
         flex: 1;
-        padding: 0 12px;
+        // padding: 0 12px;
+        .el-progress {
+          margin-top: 6px;
+        }
         .content-link {
           color: #0070e0;
           text-decoration: none;
@@ -210,10 +220,10 @@ const handleShowPwd = () => {
 
         .detail-panel-pwd {
           display: flex;
-          justify-content: space-between;
+          // justify-content: space-between;s
           align-items: center;
           .detail-panel-pwd-icon {
-            margin-right: 12px;
+            margin-left: 8px;
           }
         }
       }

@@ -17,7 +17,7 @@
       <el-button type="primary" @click="submitForm(ruleFormRef)">
         登录
       </el-button>
-      <el-button @click="resetForm(ruleFormRef)">Reset</el-button>
+      <el-button @click="resetForm(ruleFormRef)"> Reset </el-button>
     </el-form-item>
   </el-form>
 </template>

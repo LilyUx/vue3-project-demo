@@ -6,6 +6,8 @@
     "moduleResolution": "Node",
     "strict": true,
     "jsx": "preserve",
+    "jsxFactory": "h",
+    "jsxFragmentFactory": "Fragment",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "esModuleInterop": true,
@@ -14,11 +16,20 @@
     "noEmit": true,
     "types": ["element-plus/global"],
     "baseUrl": "./",
-    "paths":{
+    "paths": {
       "@": ["src"],
-      "@/*": ["src/*"],
+      "@/*": ["src/*"]
     }
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    ".eslintrc.cjs",
+    "vite.config.ts",
+    "auto-imports.d.ts",
+    "components.d.ts"
+  ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

@@ -23,7 +23,7 @@ lang: zh-CN
 | column     | 一行详情展示的数量     | number | —                     | 3          |
 | direction  | 排列的方向             | string | vertical / horizontal | horizontal |
 | title      | 标题文本，显示在左上方 | string | —                     | —          |
-| labelWidth | label的长度            | number | —                     |            |
+| labelWidth | label 的长度           | number | —                     |            |
 
 ## DetailPanel 插槽
 
@@ -33,23 +33,23 @@ lang: zh-CN
 
 ## DetailPanel-column 属性
 
-| 属性名            | 说明                                                         | 类型                                                   | 可选值                                                 | 默认值  |
-| ----------------- | ------------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ | ------- |
-| type              | 内容展示的类型                                               | text / password / pwd / tag / status / link / progress | text / password / pwd / tag / status / link / progress | text    |
-| label             | 标签文本                                                     | string                                                 | —                                                      | —       |
-| label-icon        | 标签文本的图标                                               | string / number                                        | —                                                      | —       |
-| label-slot-name   | label支持插槽                                                | string                                                 | —                                                      | —       |
-| render-label      | label支持render                                              | () => any                                              | —                                                      | —       |
-| content           | 标签对应展示的内容                                           | string / number                                        | —                                                      | —       |
-| href-link         | type为 `link` 时，可传入地址跳转，地址跳转的方式为打开新标签栏 | string                                                 | —                                                      | —       |
-| status-color      | type为 `status` 时，可传入色值定义原点的颜色                 | string                                                 | —                                                      | —       |
-| tag-type          | type为 tag 时，可传入 `tag-type`  定义标签的类型             | success / info / warning / danger                      | success / info / warning / danger                      | success |
-| content-slot-name | content支持插槽                                              | string                                                 | —                                                      | —       |
-| render-content    | content支持render                                            | () => any                                              | —                                                      | —       |
+| 属性名            | 说明                                                            | 类型                                                   | 可选值                                                 | 默认值  |
+| ----------------- | --------------------------------------------------------------- | ------------------------------------------------------ | ------------------------------------------------------ | ------- |
+| type              | 内容展示的类型                                                  | text / password / pwd / tag / status / link / progress | text / password / pwd / tag / status / link / progress | text    |
+| label             | 标签文本                                                        | string                                                 | —                                                      | —       |
+| label-icon        | 标签文本的图标                                                  | string / number                                        | —                                                      | —       |
+| label-slot-name   | label 支持插槽                                                  | string                                                 | —                                                      | —       |
+| render-label      | label 支持 render                                               | () => any                                              | —                                                      | —       |
+| content           | 标签对应展示的内容                                              | string / number                                        | —                                                      | —       |
+| href-link         | type 为 `link` 时，可传入地址跳转，地址跳转的方式为打开新标签栏 | string                                                 | —                                                      | —       |
+| status-color      | type 为 `status` 时，可传入色值定义原点的颜色                   | string                                                 | —                                                      | —       |
+| tag-type          | type 为 tag 时，可传入 `tag-type` 定义标签的类型                | success / info / warning / danger                      | success / info / warning / danger                      | success |
+| content-slot-name | content 支持插槽                                                | string                                                 | —                                                      | —       |
+| render-content    | content 支持 render                                             | () => any                                              | —                                                      | —       |
 
 ## DetailPanel-column 插槽
 
-| 插槽名            | 说明                    |
-| ----------------- | ----------------------- |
-| label-slot-name   | 自定义 column 的label   |
-| content-slot-name | 自定义 column 的content |
+| 插槽名            | 说明                     |
+| ----------------- | ------------------------ |
+| label-slot-name   | 自定义 column 的 label   |
+| content-slot-name | 自定义 column 的 content |
